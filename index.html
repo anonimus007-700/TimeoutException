@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="progress-container">
+        <svg class="progress-ring" width="300" height="300" viewBox="0 0 100 100">
+          <defs>
+            <!-- Плавний градієнт -->
+            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6C5CE7" />
+              <stop offset="35%" stop-color="#4892DC" />
+              <stop offset="50%" stop-color="#00FFC6" />
+              <stop offset="100%" stop-color="#00FFC6" />
+            </linearGradient>
+
+            <!-- Посилений багатошаровий неоновий Glow -->
+            <filter id="neonGlowThick" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="19" result="blur_wide" />
+              <feComponentTransfer in="blur_wide" result="glow_fade">
+                <feFuncA type="linear" slope="0.4" />
+              </feComponentTransfer>
+
+              <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur_mid" />
+              <feComponentTransfer in="blur_mid" result="glow_mid">
+                <feFuncA type="linear" slope="0.7" />
+              </feComponentTransfer>
+
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur_sharp" />
+
+              <feMerge>
+                <feMergeNode in="glow_fade" />
+                <feMergeNode in="glow_mid" />
+                <feMergeNode in="blur_sharp" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- 1. Цятки (шкала) по колу -->
+          <circle
+            class="ticks"
+            cx="50"
+            cy="50"
+            r="48"
+            fill="none"
+            stroke="rgba(255, 255, 255, 0.25)"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-dasharray="0.01 12.56"
+            transform="rotate(-90 50 50)"
+          />
+
+          <!-- 2. Основний прогрес-бар з товстим неоновим сяйвом -->
+          <circle
+            class="progress-circle"
+            cx="50"
+            cy="50"
+            r="42"
+            fill="none"
+            stroke="url(#progressGradient)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            filter="url(#neonGlowThick)"
+            transform="rotate(-90 50 50)"
+            stroke-dasharray="263.89"
+            stroke-dashoffset="65"
+          />
+        </svg>
+      
+        <div class="timer-content">
+          <div class="timer-text">15:00</div>
+          <div class="timer-label">BREAK</div>
+
+          <button class="timer-button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z" fill="currentColor"/>
+            </svg>
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+              <rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

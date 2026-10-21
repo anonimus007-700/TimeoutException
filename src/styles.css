@@ -1,0 +1,188 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #080C14;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-ring {
+  overflow: visible;
+}
+
+.progress-circle {
+  transform: rotate(90deg) scaleX(-1);
+  transform-origin: 50px 50px;
+  transition: stroke-dashoffset 0.3s ease-in-out;
+}
+
+
+
+.progress-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-ring {
+  display: block;
+  overflow: visible;
+}
+
+.timer-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* .timer-text {
+  color: #E5EDF8;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-label {
+  margin-top: 8px;
+  margin-bottom: 22px;
+  color: #78869B;
+  font-size: 12px;
+  letter-spacing: 7px;
+  padding-left: 7px;
+} */
+
+.timer-text {
+  color: #E5EDF8;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  /* М'який неоновий ореол навколо цифр */
+  text-shadow: 
+    0 0 12px rgba(229, 237, 248, 0.35),
+    0 0 24px rgba(72, 146, 220, 0.2);
+}
+
+.timer-label {
+  margin-top: 8px;
+  margin-bottom: 22px;
+  color: #78869B;
+  font-size: 12px;
+  letter-spacing: 7px;
+  padding-left: 7px;
+}
+
+.timer-button {
+  appearance: none;
+  -webkit-appearance: none;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Зменшено відступ між іконками */
+
+  width: 78px;  /* Зменшено ширину (було 114px) */
+  height: 36px; /* Зменшено висоту (було 52px) */
+  padding: 0;
+
+  color: rgba(220, 230, 245, 0.65); /* М'якший базовий колір іконок */
+  background: rgba(18, 24, 35, 0.65);
+  border: 1px solid rgba(210, 225, 255, 0.12); /* Тонша й делікатніша рамка */
+  border-radius: 18px; /* Закруглення під нову висоту */
+  outline: none;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timer-button svg {
+  display: block;
+  width: 13px;  /* Зменшено розмір іконок (було 16px) */
+  height: 13px;
+  flex: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.timer-button svg path,
+.timer-button svg rect {
+  fill: currentColor;
+  transition: fill 0.2s ease;
+}
+
+.timer-button:hover {
+  color: #ffffff; /* Іконки стають яскравішими */
+  background: rgba(32, 42, 60, 0.85);
+  border-color: rgba(210, 225, 255, 0.3);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    0 0 12px rgba(0, 255, 198, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Ефект кліку (Active) */
+.timer-button:active {
+  transform: translateY(0) scale(0.96);
+  background: rgba(14, 18, 26, 0.9);
+}
+
+.timer-button,
+.timer-button:hover,
+.timer-button:focus,
+.timer-button:active {
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* background: rgba(24, 30, 42, 0.75) !important; */
+  border: 1px solid rgba(210, 225, 255, 0.18);
+  border-radius: 28px;
+
+  outline: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* .timer-button::before,
+.timer-button::after,
+.timer-button svg,
+.timer-button svg path,
+.timer-button svg rect { */
+  /* background: transparent !important; */
+  /* box-shadow: none;
+}
+
+.timer-button svg {
+  display: block;
+  overflow: visible;
+} */
