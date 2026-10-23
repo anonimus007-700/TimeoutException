@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/src/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
+    <title>TimeoutException</title>
     <script type="module" src="/src/main.ts" defer></script>
   </head>
 
@@ -13,7 +13,6 @@
       <div class="progress-container">
         <svg class="progress-ring" width="300" height="300" viewBox="0 0 100 100">
           <defs>
-            <!-- Плавний градієнт -->
             <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#6C5CE7" />
               <stop offset="35%" stop-color="#4892DC" />
@@ -21,7 +20,6 @@
               <stop offset="100%" stop-color="#00FFC6" />
             </linearGradient>
 
-            <!-- Посилений багатошаровий неоновий Glow -->
             <filter id="neonGlowThick" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="19" result="blur_wide" />
               <feComponentTransfer in="blur_wide" result="glow_fade">
@@ -44,12 +42,10 @@
             </filter>
           </defs>
 
-          <!-- 1. Цятки (шкала) по колу -->
+          <!-- Цятки -->
           <circle
             class="ticks"
-            cx="50"
-            cy="50"
-            r="48"
+            cx="50" cy="50" r="48"
             fill="none"
             stroke="rgba(255, 255, 255, 0.25)"
             stroke-width="1"
@@ -58,12 +54,10 @@
             transform="rotate(-90 50 50)"
           />
 
-          <!-- 2. Основний прогрес-бар з товстим неоновим сяйвом -->
+          <!-- Прогрес-бар -->
           <circle
             class="progress-circle"
-            cx="50"
-            cy="50"
-            r="42"
+            cx="50" cy="50" r="42"
             fill="none"
             stroke="url(#progressGradient)"
             stroke-width="1.5"
@@ -74,7 +68,7 @@
             stroke-dashoffset="65"
           />
         </svg>
-      
+
         <div class="timer-content">
           <div class="timer-text">15:00</div>
           <div class="timer-label">BREAK</div>
@@ -91,6 +85,24 @@
           </button>
         </div>
       </div>
+
+      <!-- Іконка Налаштувань в лівому нижньому куті вікна -->
+      <button class="corner-icon-btn settings-btn" title="Налаштування" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+
+      <!-- Нова красива іконка Кубка в правому нижньому куті вікна -->
+      <button class="corner-icon-btn trophy-btn" title="Досягнення" aria-label="Achievements">
+        <svg viewBox="3 4 26 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.786 6c0 0 .715-1 2.214-1 1.377 0 3 1.05 3 3 0 3.21-5 4.242-5 8 0 .982 1 1.993 1 1.993" />
+          <path d="M8 17.993c0 0 1-1.011 1-1.993 0-3.758-5-4.79-5-8 0-1.95 1.623-3 3-3 1.498 0 2.214 1 2.214 1" />
+          <path d="M9 6c0 6.528 3.689 17 6.983 17S23 12.568 23 6H9z" />
+          <path d="M18 24h-4c-1.657 0-3 1.343-3 3v0h10v0c0-1.657-1.343-3-3-3z" />
+        </svg>
+      </button>
     </main>
   </body>
 </html>
