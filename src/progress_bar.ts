@@ -34,7 +34,6 @@ export class CircularProgressBar {
     const offset = this.circumference - (safePercent / 100) * this.circumference;
 
     if (this.progressCircle) {
-      console.log(this.circumference);
       this.progressCircle.style.strokeDashoffset = `${offset}`;
     }
   }
