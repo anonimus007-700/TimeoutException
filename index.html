@@ -74,14 +74,18 @@
           <div class="timer-label">BREAK</div>
 
           <button class="timer-button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M8 5v14l11-7z" fill="currentColor"/>
-            </svg>
-
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/>
-              <rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/>
-            </svg>
+            <div class="timer-button-pause">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" fill="currentColor"/>
+              </svg>
+            </div>
+            
+            <div class="timer-button-play">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+                <rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+              </svg>
+            </div>
           </button>
         </div>
       </div>
@@ -96,11 +100,13 @@
 
       <!-- Нова красива іконка Кубка в правому нижньому куті вікна -->
       <button class="corner-icon-btn trophy-btn" title="Досягнення" aria-label="Achievements">
-        <svg viewBox="3 4 26 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22.786 6c0 0 .715-1 2.214-1 1.377 0 3 1.05 3 3 0 3.21-5 4.242-5 8 0 .982 1 1.993 1 1.993" />
-          <path d="M8 17.993c0 0 1-1.011 1-1.993 0-3.758-5-4.79-5-8 0-1.95 1.623-3 3-3 1.498 0 2.214 1 2.214 1" />
-          <path d="M9 6c0 6.528 3.689 17 6.983 17S23 12.568 23 6H9z" />
-          <path d="M18 24h-4c-1.657 0-3 1.343-3 3v0h10v0c0-1.657-1.343-3-3-3z" />
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2" />
+          <path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2" />
+          <path d="M7 4h10v5a5 5 0 0 1-10 0V4z" />
+          <path d="M12 14v3" />
+          <path d="M8 21h8" />
+          <path d="M12 17h.01" />
         </svg>
       </button>
     </main>

@@ -181,3 +181,53 @@ body {
   color: #FFFFFF;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
 }
+
+.timer-button-play,
+.timer-button-pause {
+  position: relative;
+  isolation: isolate;
+}
+
+.timer-button-play svg,
+.timer-button-pause svg {
+  overflow: visible;
+  color: rgba(229, 237, 248, 0.35);
+  transition: color 0.3s ease;   /* тільки колір, без filter */
+}
+
+/* Надм'яке рассеянне сяйво без гострих меж */
+.timer-button-play::before,
+.timer-button-pause::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(229, 237, 248, 0.18) 0%,
+    rgba(229, 237, 248, 0.10) 30%,
+    rgba(229, 237, 248, 0.03) 60%,
+    transparent 85%
+  );
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* Активний стан: делікатне світло без пересвіту */
+.timer-button-play.active svg,
+.timer-button-pause.active svg {
+  color: #E5EDF8;
+  filter: drop-shadow(0 0 5px rgba(229, 237, 248, 0.35));  /* вмикається миттєво */
+}
+
+.timer-button-play.active::before,
+.timer-button-pause.active::before {
+  opacity: 1;
+}
